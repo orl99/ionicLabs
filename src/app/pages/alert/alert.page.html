@@ -1,13 +1,16 @@
 
-<app-header titulo="alert page"></app-header>
+<app-header [titulo]="titulo"></app-header>
 
 
 <ion-content padding>
 
   <h1>Alert Page</h1>
 
-  <ion-button (click)="presentAlert()">
-    Click me
+  <ion-button expand="full" (click)="presentAlert()">
+    Basic Alert
+  </ion-button>
+  <ion-button expand="full" (click)="prompInput()">
+    Promp Alert
   </ion-button>
 
 </ion-content>

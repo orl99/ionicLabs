@@ -8,44 +8,41 @@ import { AlertController } from '@ionic/angular';
 })
 export class AlertPage implements OnInit {
 
-  titulo: string;
+  titulo: string = 'Titulo';
 
   constructor( public alertCtrl: AlertController ) { }
 
   ngOnInit() {
   }
-
-  async presentInput() {
-
-    const input = await this.alertCtrl.create({
-      header: 'Input',
-      subHeader: 'Ingrese su nombre:',
+  async prompInput() {
+    const alert =  await this.alertCtrl.create({
+      header: 'Promp Alert ;v',
+      subHeader: 'Change the title page',
       inputs: [
         {
-          name: 'txtNombre',
+          name: 'title',
           type: 'text',
-          placeholder: 'Nombre'
+          placeholder: 'Page title'
         }
       ],
       buttons: [
         {
-          text: 'Cancelar',
-          role: 'cancel',
+          text: 'Cancel',
+          role: 'Cancel',
+          cssClass: 'secondary',
           handler: () => {
             console.log('Confirm Cancel');
           }
         }, {
-          text: 'OK',
-          handler: ( data ) => {
-            console.log('Confirm Ok', data);
-            this.titulo = data.txtNombre;
+          text: 'Ok',
+          handler: (text) => {
+            console.log(text);
+            this.titulo = text.title;
           }
         }
       ]
     });
-
-    await input.present();
-
+    await alert.present();
   }
 
   async presentAlert() {
