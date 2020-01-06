@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'inicio', loadChildren: './pages/inicio/inicio.module#InicioPageModule' },
   { path: 'alert', loadChildren: './pages/alert/alert.module#AlertPageModule' },
   { path: 'action-sheet', loadChildren: './pages/action-sheet/action-sheet.module#ActionSheetPageModule' },
+  { path: 'badge', loadChildren: './pages/badge/badge.module#BadgePageModule' },
 ];
 
 @NgModule({

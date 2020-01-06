@@ -44,7 +44,6 @@ export class AlertPage implements OnInit {
     });
     await alert.present();
   }
-
   async presentAlert() {
     const alert = await this.alertCtrl.create({
       header: 'Alert',
